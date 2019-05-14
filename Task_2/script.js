@@ -189,8 +189,13 @@ for ( let i = 0; i < 2; i++ ) {
             appData.expenses[a] = b;
         }
     else {
-        alert('Введены не корректные данные, повторите ввод');
-        i -- ;
+        const test = confirm('Введены не корректные данные, повторить ввод ?');
+        if (test) {
+            i -- ;
+        } 
+        else {
+            continue;
+        }
     }
 }
 
