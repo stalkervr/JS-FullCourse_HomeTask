@@ -167,7 +167,6 @@
 let money, time;
 
 
-
 function start() {
     money = +prompt("Ваш бюджет на месяц?", '20000'),
     time = prompt('Введите дату в формате YYYY-MM-DD', '2019-05-14');
@@ -211,7 +210,6 @@ function chooseExpenses() {
 }
 
 chooseExpenses();
-
 
 appData.moneyPerDay = (appData.budget / 30).toFixed(2);
 
