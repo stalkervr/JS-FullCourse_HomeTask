@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     'use strict';
     /* #region  TABS */
-    
+
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),
         tabContent = document.querySelectorAll('.info-tabcontent');
@@ -71,25 +71,25 @@ window.addEventListener('DOMContentLoaded', function () {
     });
     /* #endregion */
 
-    // TIMER
+    /* #region  TIMER */
 
-    let deadline ='2019-05-21';
+    let deadline = '2019-05-22';
 
     function getTimeRemaining(endtime) {
 
         let t = Date.parse(endtime) - Date.parse(new Date()),
-            seconds = Math.floor((t/1000) % 60),
-            minutes = Math.floor((t/1000/60) % 60),
-            hours = Math.floor((t/(1000*60*60)));
-            // hours = Math.floor((t/1000/60/60) % 24),
-            // days = Math.floor((t/(1000*60*60*24)));
+            seconds = Math.floor((t / 1000) % 60),
+            minutes = Math.floor((t / 1000 / 60) % 60),
+            hours = Math.floor((t / (1000 * 60 * 60)));
+        // hours = Math.floor((t/1000/60/60) % 24),
+        // days = Math.floor((t/(1000*60*60*24)));
 
-            return {
-                'total' : t,
-                'hours' : hours,
-                'minutes' : minutes,
-                'seconds' : seconds
-            };
+        return {
+            'total': t,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
     }
 
     function setClock(id, endtime) {
@@ -110,11 +110,11 @@ window.addEventListener('DOMContentLoaded', function () {
             //hours.textContent = t.hours;
             //minutes.textContent = t.minutes;
             //seconds.textContent = t.seconds;
-            t.hours < 10 ? hours.textContent = '0' + t.hours : hours.textContent =  t.hours;
-            t.minutes < 10 ? minutes.textContent = '0' + t.minutes : seconds.textContent =  t.minutes;
-            t.seconds < 10 ? seconds.textContent = '0' + t.seconds : seconds.textContent =  t.seconds;
+            t.hours < 10 ? hours.textContent = '0' + t.hours : hours.textContent = t.hours;
+            t.minutes < 10 ? minutes.textContent = '0' + t.minutes : seconds.textContent = t.minutes;
+            t.seconds < 10 ? seconds.textContent = '0' + t.seconds : seconds.textContent = t.seconds;
 
-            if (t.total <= 0){
+            if (t.total <= 0) {
                 clearInterval(timeInterval);
                 hours.textContent = '00';
                 minutes.textContent = '00';
@@ -126,4 +126,5 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 
     setClock('timer', deadline);
+    /* #endregion */
 });
