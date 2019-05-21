@@ -29,26 +29,26 @@
 
 // Task_11
 
-    //     1) Написать функцию вызова модального окна
+//     1) Написать функцию вызова модального окна
 
-    //     2) Привязать модальное окно к кнопкам “Узнать подробнее” в табах. Код не должен дублироваться.
+//     2) Привязать модальное окно к кнопкам “Узнать подробнее” в табах. Код не должен дублироваться.
 
-    /* <input id="age" value="30">
-    let age = document.getElementById('age');
-    function showUser(surname, name) {
-    	alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
-    }
-    showUser(); */
+/* <input id="age" value="30">
+let age = document.getElementById('age');
+function showUser(surname, name) {
+	alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
+}
+showUser(); */
 
-    // Выведите на экран правильное сообщение, которое берет значение из input
+// Выведите на экран правильное сообщение, которое берет значение из input
 
-    // Написать скрипт в отдельном js файле.
+// Написать скрипт в отдельном js файле.
 
 
 
-    // Проверить, чтобы все работало и не было ошибок в консоли.
+// Проверить, чтобы все работало и не было ошибок в консоли.
 
-    // Добавить папку с уроком на GitHub
+// Добавить папку с уроком на GitHub
 
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -149,24 +149,26 @@ window.addEventListener('DOMContentLoaded', function () {
     setClock('timer', deadline);
     /* #endregion */
 
+    /* #region  MODAL WINDOW */
     // Task_11 Modal
 
     let more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
         close = document.querySelector('.popup-close');
 
-    more.addEventListener('click', function() {
+    more.addEventListener('click', function () {
         overlay.style.display = 'block';
         this.classList.add('more-splash');
         document.body.style.overflow = 'hidden'; // запрещаем прокрутку страницы
     });
 
-    close.addEventListener('click', function(){
+    close.addEventListener('click', function () {
         overlay.style.display = 'none';
         //this.classList.remove('more-splash');
         more.classList.remove('more-splash');
         document.body.style.overflow = ''; // включаем прокрутку
     });
+    /* #endregion */
 
 
 });
