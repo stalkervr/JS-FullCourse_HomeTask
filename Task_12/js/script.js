@@ -99,6 +99,7 @@ window.addEventListener('DOMContentLoaded', function () {
     /* #endregion */
 
     /* #region  TIMER */
+// TODO: Rewrite whith classes ES 6  
 
     let deadline = '2019-05-22';
 
@@ -156,6 +157,7 @@ window.addEventListener('DOMContentLoaded', function () {
     /* #endregion */
 
     /* #region  MODAL WINDOW */
+    // TODO: Rewrite whith classes ES 6  
     // Task_11 Modal
 
     let more = document.querySelector('.more'),
