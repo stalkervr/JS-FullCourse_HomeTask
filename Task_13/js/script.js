@@ -202,7 +202,7 @@ let form = document.querySelector('.main-form'),
 
     statusMessage.classList.add('status');
     // обработчик события необходимо вешать на саму форму!!!! а не на
-    // какую-либо конкретную форму!!!!
+    // какую-либо конкретную кнопку !!!!
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         form.appendChild(statusMessage);
@@ -213,9 +213,10 @@ let form = document.querySelector('.main-form'),
 
         let formData = new FormData(form);
         request.send(formData);
-
+        // обработка ответов сервера
+        // 'readystatechange' отслеживает состояние запроса
         request.addEventListener('readystatechange', function() {
-            if(request.readyState < 4 ) {
+            if (request.readyState < 4 ) {
                 statusMessage.innerHTML = message.loading;
             }
             else if (request.readyState === 4 && request.status == 200) {
@@ -225,5 +226,9 @@ let form = document.querySelector('.main-form'),
                 statusMessage.innerHTML = message.failure;
             }
         });
+        // очищаем поля ввода
+        for (let i =0; i < input.length; i++) {
+            input[i] = '';
+        }
     });
 });
