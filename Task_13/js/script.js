@@ -209,10 +209,19 @@ let form = document.querySelector('.main-form'),
 
         let request = new XMLHttpRequest();
         request.open('POST', 'server.php');
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        //request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.setRequestHeader('Content-type', 'application/json', 'charset=utf-8');
 
         let formData = new FormData(form);
-        request.send(formData);
+
+        let obj = {};
+        formData.forEach(function(value, key){
+            obj[key] = value;
+        });
+
+        let json = JSON.stringify(obj);
+
+        request.send(json);
         // обработка ответов сервера
         // 'readystatechange' отслеживает состояние запроса
         request.addEventListener('readystatechange', function() {
@@ -230,5 +239,6 @@ let form = document.querySelector('.main-form'),
         for (let i =0; i < input.length; i++) {
             input[i] = '';
         }
+
     });
 });
